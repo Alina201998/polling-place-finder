@@ -1,87 +1,7 @@
-# import pyodbc
-# import tkinter as tk
-
-# # 36105 24 73960 50
-# # Connection String
-# # Connection details
-# conn = pyodbc.connect(
-#     r'Driver=SQL Server;'
-#     r'Server=Alina-zen;'
-#     r'Database=master;'
-#     r'Trusted_Connection=yes;'
-#     )
-
-# # to create a cursor
-# crs = conn.cursor()
-# # to create a cursor that returns list instead of default tuples
-# # cursor = connection.cursor(dictionary=True)
-
-
-# def polling_place():
-#     try:
-#         input_zip = int(txt1.get())
-#         input_precinct = int(txt2.get())
-#     except ValueError:
-#         print("Invalid input. Please enter numeric values for zip code and precinct number.")
-#         return
-
-
-#     query = ("SELECT Polling_place_name, P.address "
-#          "FROM Polling_place P "
-#          "JOIN Voters V on P.polling_place_id = V.polling_place_id "
-#          "WHERE V.zip_code = ? AND precinct_number = ?;")
-#     #execute the query
-#     crs.execute(query, (input_zip, input_precinct))
-
-#     #to fetch data(returns Tuple!)
-#     row= crs.fetchone()
-#     if row:
-#         result_label.config(text=f"Polling place: {row[0]}\n Address: {row[1]}") #row[0]: This accesses the first element in the tuple, which corresponds to the first column in your SELECT query (Polling_place_name in this case).
-#     else:
-#         result_label.config(text="No results found.")
-    
-    
-    
-    
-    
-# # Main application window
-# root = tk.Tk()
-# root.title("Choose or Lose")
-# root.geometry("450x350")
-# root.configure(bg='ivory2')
-
-# # Title
-# title_label = tk.Label(
-#     root,
-#     text="🗳️ Where Do I Vote?",
-#     font=("Calibri", 24, "bold"),
-#     bg="ivory2",
-#     fg="#333"
-    
-# )
-
-
-# # ZIP input
-# lbl1 = tk.Label(root, text="Enter zip", font="Calibri 16", bg="ivory2")
-# lbl1.pack()
-# txt1 = tk.Entry(root, width=15)
-# txt1.pack(pady=5)
-
-# # Precinct number input
-# lbl2 = tk.Label(root, text="Enter precinct", font="Calibri 16", bg="ivory2")
-# lbl2.pack()
-# txt2 = tk.Entry(root, width=15)
-# txt2.pack(pady=5)
-
-# # Button
-# button = tk.Button(root, text="Click", font="Calibri 16", command=polling_place)
-# button.pack(pady=10)
-
-# # Program output
-# result_label = tk.Label(root, text="", font="Calibri 16", bg="ivory2", wraplength=350)
-# result_label.pack(pady=20)
-
-# root.mainloop()
+# NOTE:
+# This application uses a local SQL Server instance (Windows Trusted Connection).
+# To run the app, the database schema and sample data must be created locally.
+# See schema.sql and insert scripts included in this repository.
     
     
 import pyodbc
@@ -148,3 +68,4 @@ result_label = tk.Label(root, text="", font="Calibri 14", bg="ivory2", wraplengt
 result_label.pack(pady=10)
 
 root.mainloop()
+
