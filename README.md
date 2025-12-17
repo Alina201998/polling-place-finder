@@ -7,13 +7,13 @@ It combines **Python**, **Tkinter**, and **SQL Server** to simulate a real-world
 
 ## Features
 
-| Feature                     | Description                                                                 |
+| Feature                    | Description                                                                 
 |----------------------------|-----------------------------------------------------------------------------|
-| GUI with Tkinter        | Clean and user-friendly interface for input and results                     |
-| SQL Server connection   | Retrieves data securely from a local relational database                    |
-| Input validation         | Handles incorrect input with GUI error messages                             |
-| Realistic data          | Uses sample polling locations and voter records                             |
-| Responsive display       | Results wrap cleanly on smaller window sizes for readability                 |
+| GUI with Tkinter           | Clean and user-friendly interface for input and results                     
+| SQL Server connection      | Retrieves data securely from a local relational database                    
+| Input validation           | Handles incorrect input with GUI error messages                             
+| Realistic data             | Uses sample polling locations and voter records                             
+| Responsive display         | Results wrap cleanly on smaller window sizes for readability                 
 
 ---
 
@@ -37,9 +37,25 @@ It combines **Python**, **Tkinter**, and **SQL Server** to simulate a real-world
 
 ---
 
+## How to Run
+
+1. Create the database using the provided SQL schema.
+2. Insert sample data into the tables.
+3. Update the SQL Server name in main.py if needed.
+4. Install dependencies:
+      pip install pyodbc
+5. Run the application:
+   python main.py
+
+Notes
+1. This project uses a local SQL Server instance with Windows Trusted Authentication.
+2. It is intended as a learning and portfolio project demonstrating GUI development and database integration.
+
+---
+
 ## Database Schema
 
-```sql
+sql
 CREATE TABLE Polling_place (
     polling_place_id INT PRIMARY KEY,
     polling_place_name VARCHAR(100),
@@ -61,3 +77,6 @@ CREATE TABLE Voters (
     polling_place_id INT,
     FOREIGN KEY (polling_place_id) REFERENCES Polling_place(polling_place_id)
 );
+
+
+
