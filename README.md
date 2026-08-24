@@ -130,3 +130,5 @@ pytest
    ```bash
    python main.py
    ```
+
+   ![Demo](screenshots/choose_or_lose_demo.gif)
